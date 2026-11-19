@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "deploy": {
+    "command": "docker compose -f compose.yml -f compose.deploy.yml build && docker compose -f compose.yml -f compose.deploy.yml run --rm backend bash scripts/prestart.sh && docker compose -f compose.yml -f compose.deploy.yml up -d",
+    "guide": ".wally/docs/devops/test-env-deploy.md",
+    "verify": "curl -fsS http://localhost:8000/api/v1/utils/health-check/",
+    "rollback": "",
+    "readiness": "pending",
+    "gaps": [
+      "缺少镜像回滚、数据库备份恢复与 alembic downgrade 的触发条件和验收步骤",
+      "未确认目标测试环境的地址、访问方式与部署授权边界",
+      "部署所需 DOMAIN 与 secrets 的提供方式未在仓库内固定"
+    ]
+  },
+  "it": {
+    "command": "docker compose run --rm backend bash scripts/prestart.sh && docker compose up -d --wait backend && docker compose run --rm playwright bunx playwright test --fail-on-flaky-tests",
+    "guide": ".wally/docs/integration_test/integration_test.md",
+    "success_criteria": "Playwright 退出码 0，0 failed，0 flaky；报告位于 frontend/playwright-report",
+    "readiness": "ready",
+    "gaps": []
+  }
+}

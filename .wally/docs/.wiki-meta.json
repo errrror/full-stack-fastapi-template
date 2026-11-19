@@ -1,0 +1,651 @@
+{
+  "generator": "wally-codewiki",
+  "language": "zh-CN",
+  "workspaceMode": "single-repo",
+  "generatedAt": "2026-11-19T12:05:00Z",
+  "commitHash": "",
+  "checkedHead": "77e550a73bb49dd2967622c5ed11bf7a49603c93",
+  "branch": "master",
+  "worktree": "contains uncommitted .wally initialization artifacts; no source edits",
+  "mode": "full",
+  "pageCount": 30,
+  "skippedHumanPages": [],
+  "driftWarnings": [],
+  "pageOrder": [
+    "INDEX.md",
+    "overview/system-architecture.md",
+    "overview/business-architecture.md",
+    "overview/callchain-panorama.md",
+    "overview/glossary.md",
+    "architecture/index.md",
+    "architecture/module-dep-matrix.md",
+    "architecture/api-service.md",
+    "architecture/frontend-spa.md",
+    "architecture/email-templates.md",
+    "integrations/index.md",
+    "integrations/topology-and-mapping.md",
+    "integrations/downstream/postgresql.md",
+    "integrations/downstream/smtp.md",
+    "integrations/downstream/sentry.md",
+    "business/index.md",
+    "business/auth-and-users.md",
+    "business/items.md",
+    "business/password-recovery.md",
+    "business/domain-models/index.md",
+    "business/domain-models/user.md",
+    "business/domain-models/item.md",
+    "contracts/api-reference.md",
+    "contracts/error-codes.md",
+    "contracts/configuration.md",
+    "operations/dev-and-test.md",
+    "operations/deployment-and-runtime.md",
+    "operations/runbook-and-observability.md",
+    "operations/pitfalls-and-adr.md",
+    "operations/boundary.md"
+  ],
+  "externalPages": [
+    "apis/index.md",
+    "apis/_template.md",
+    "sqls/README.md",
+    "unittest/unittest.md",
+    "integration_test/integration_test.md",
+    "devops/env.md",
+    "devops/test-env-deploy.md"
+  ],
+  "fileToDocs": {
+    "backend/app/main.py": [
+      "overview/system-architecture.md",
+      "overview/callchain-panorama.md",
+      "architecture/api-service.md",
+      "integrations/index.md",
+      "integrations/downstream/sentry.md",
+      "operations/runbook-and-observability.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "backend/app/api/main.py": [
+      "overview/system-architecture.md",
+      "architecture/index.md",
+      "architecture/module-dep-matrix.md",
+      "architecture/api-service.md",
+      "contracts/api-reference.md"
+    ],
+    "backend/app/core/config.py": [
+      "overview/system-architecture.md",
+      "overview/glossary.md",
+      "architecture/index.md",
+      "integrations/downstream/postgresql.md",
+      "integrations/downstream/smtp.md",
+      "integrations/downstream/sentry.md",
+      "business/password-recovery.md",
+      "contracts/configuration.md",
+      "operations/runbook-and-observability.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "frontend/src/main.tsx": [
+      "overview/system-architecture.md",
+      "overview/callchain-panorama.md",
+      "architecture/index.md",
+      "architecture/module-dep-matrix.md",
+      "architecture/frontend-spa.md",
+      "integrations/index.md"
+    ],
+    "frontend/vite.config.ts": [
+      "overview/system-architecture.md",
+      "architecture/frontend-spa.md"
+    ],
+    "compose.yml": [
+      "overview/system-architecture.md",
+      "contracts/configuration.md",
+      "operations/deployment-and-runtime.md",
+      "operations/runbook-and-observability.md"
+    ],
+    "backend/app/models.py": [
+      "overview/business-architecture.md",
+      "overview/glossary.md",
+      "integrations/topology-and-mapping.md",
+      "integrations/downstream/postgresql.md",
+      "business/index.md",
+      "business/items.md",
+      "business/password-recovery.md",
+      "business/domain-models/index.md",
+      "business/domain-models/user.md",
+      "business/domain-models/item.md"
+    ],
+    "backend/app/api/routes/users.py": [
+      "overview/business-architecture.md",
+      "integrations/topology-and-mapping.md",
+      "integrations/downstream/smtp.md",
+      "business/index.md",
+      "business/auth-and-users.md",
+      "business/domain-models/user.md",
+      "contracts/api-reference.md",
+      "contracts/error-codes.md"
+    ],
+    "backend/app/api/routes/items.py": [
+      "overview/business-architecture.md",
+      "architecture/api-service.md",
+      "business/index.md",
+      "business/items.md",
+      "business/domain-models/item.md",
+      "contracts/api-reference.md",
+      "contracts/error-codes.md"
+    ],
+    "backend/app/api/routes/login.py": [
+      "overview/business-architecture.md",
+      "overview/callchain-panorama.md",
+      "integrations/topology-and-mapping.md",
+      "integrations/downstream/smtp.md",
+      "business/index.md",
+      "business/auth-and-users.md",
+      "business/password-recovery.md",
+      "contracts/api-reference.md",
+      "contracts/error-codes.md"
+    ],
+    "backend/app/api/deps.py": [
+      "overview/callchain-panorama.md",
+      "overview/glossary.md",
+      "architecture/module-dep-matrix.md",
+      "architecture/api-service.md",
+      "business/auth-and-users.md",
+      "contracts/error-codes.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "backend/app/crud.py": [
+      "overview/callchain-panorama.md",
+      "integrations/downstream/postgresql.md",
+      "business/auth-and-users.md",
+      "business/items.md",
+      "business/domain-models/user.md",
+      "business/domain-models/item.md"
+    ],
+    "backend/app/utils.py": [
+      "overview/callchain-panorama.md",
+      "architecture/module-dep-matrix.md",
+      "architecture/email-templates.md",
+      "integrations/index.md",
+      "integrations/topology-and-mapping.md",
+      "integrations/downstream/smtp.md",
+      "business/password-recovery.md",
+      "operations/runbook-and-observability.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "frontend/src/hooks/useAuth.ts": [
+      "overview/glossary.md",
+      "architecture/frontend-spa.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "packages/react-email/package.json": [
+      "architecture/index.md",
+      "integrations/index.md"
+    ],
+    "scripts/generate-client.sh": [
+      "architecture/index.md"
+    ],
+    "backend/app/core/db.py": [
+      "architecture/module-dep-matrix.md",
+      "integrations/index.md",
+      "integrations/downstream/postgresql.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "frontend/openapi-ts.config.ts": [
+      "architecture/module-dep-matrix.md",
+      "architecture/frontend-spa.md"
+    ],
+    "backend/app/api/routes/utils.py": [
+      "architecture/api-service.md",
+      "integrations/topology-and-mapping.md",
+      "integrations/downstream/smtp.md",
+      "contracts/api-reference.md",
+      "operations/runbook-and-observability.md"
+    ],
+    "frontend/src/routes/_layout.tsx": [
+      "architecture/frontend-spa.md"
+    ],
+    "frontend/src/routes/login.tsx": [
+      "architecture/frontend-spa.md"
+    ],
+    "packages/react-email/emails/new_account.tsx": [
+      "architecture/email-templates.md"
+    ],
+    "packages/react-email/emails/reset_password.tsx": [
+      "architecture/email-templates.md"
+    ],
+    "packages/react-email/emails/test_email.tsx": [
+      "architecture/email-templates.md"
+    ],
+    "packages/react-email/ui/Layout.tsx": [
+      "architecture/email-templates.md"
+    ],
+    "backend/app/alembic/env.py": [
+      "integrations/downstream/postgresql.md"
+    ],
+    "backend/pyproject.toml": [
+      "integrations/downstream/sentry.md"
+    ],
+    "backend/app/core/security.py": [
+      "business/auth-and-users.md"
+    ],
+    "backend/app/alembic/versions/fe56fa70289e_add_created_at_to_user_and_item.py": [
+      "business/domain-models/index.md"
+    ],
+    "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py": [
+      "business/domain-models/index.md"
+    ],
+    "backend/app/api/routes/private.py": [
+      "contracts/api-reference.md"
+    ],
+    ".env": [
+      "contracts/configuration.md"
+    ],
+    "frontend/.env": [
+      "contracts/configuration.md"
+    ],
+    "backend/Dockerfile": [
+      "contracts/configuration.md",
+      "operations/deployment-and-runtime.md"
+    ],
+    "backend/scripts/test.sh": [
+      "operations/dev-and-test.md"
+    ],
+    "backend/scripts/lint.sh": [
+      "operations/dev-and-test.md"
+    ],
+    "frontend/package.json": [
+      "operations/dev-and-test.md"
+    ],
+    ".pre-commit-config.yaml": [
+      "operations/dev-and-test.md"
+    ],
+    ".github/workflows/test-backend.yml": [
+      "operations/dev-and-test.md"
+    ],
+    ".github/workflows/playwright.yml": [
+      "operations/dev-and-test.md"
+    ],
+    "compose.deploy.yml": [
+      "operations/deployment-and-runtime.md"
+    ],
+    "deployment.md": [
+      "operations/deployment-and-runtime.md"
+    ],
+    ".github/workflows/deploy-docker-compose.yml": [
+      "operations/deployment-and-runtime.md"
+    ],
+    ".gitignore": [
+      "operations/boundary.md"
+    ],
+    ".dockerignore": [
+      "operations/boundary.md"
+    ],
+    ".fastapicloudignore": [
+      "operations/boundary.md"
+    ],
+    "hooks/post_gen_project.py": [
+      "operations/boundary.md"
+    ],
+    ".agents/skills/library-skills/SKILL.md": [
+      "operations/boundary.md"
+    ],
+    "img/dashboard.png": [
+      "operations/boundary.md"
+    ]
+  },
+  "repoDeps": [],
+  "moduleTree": [
+    {
+      "page": "overview/system-architecture.md",
+      "sourcePaths": [
+        "backend/app/main.py",
+        "backend/app/api/main.py",
+        "backend/app/core/config.py",
+        "frontend/src/main.tsx",
+        "frontend/vite.config.ts",
+        "compose.yml"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/business-architecture.md",
+      "sourcePaths": [
+        "backend/app/models.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/routes/items.py",
+        "backend/app/api/routes/login.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/callchain-panorama.md",
+      "sourcePaths": [
+        "backend/app/main.py",
+        "backend/app/api/deps.py",
+        "backend/app/api/routes/login.py",
+        "backend/app/crud.py",
+        "backend/app/utils.py",
+        "frontend/src/main.tsx"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/glossary.md",
+      "sourcePaths": [
+        "backend/app/models.py",
+        "backend/app/core/config.py",
+        "backend/app/api/deps.py",
+        "frontend/src/hooks/useAuth.ts"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/index.md",
+      "sourcePaths": [
+        "backend/app/api/main.py",
+        "backend/app/core/config.py",
+        "frontend/src/main.tsx",
+        "packages/react-email/package.json",
+        "scripts/generate-client.sh"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/module-dep-matrix.md",
+      "sourcePaths": [
+        "backend/app/api/main.py",
+        "backend/app/api/deps.py",
+        "backend/app/core/db.py",
+        "backend/app/utils.py",
+        "frontend/src/main.tsx",
+        "frontend/openapi-ts.config.ts"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/api-service.md",
+      "sourcePaths": [
+        "backend/app/main.py",
+        "backend/app/api/main.py",
+        "backend/app/api/deps.py",
+        "backend/app/api/routes/utils.py",
+        "backend/app/api/routes/items.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/frontend-spa.md",
+      "sourcePaths": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useAuth.ts",
+        "frontend/src/routes/_layout.tsx",
+        "frontend/src/routes/login.tsx",
+        "frontend/openapi-ts.config.ts",
+        "frontend/vite.config.ts"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/email-templates.md",
+      "sourcePaths": [
+        "packages/react-email/emails/new_account.tsx",
+        "packages/react-email/emails/reset_password.tsx",
+        "packages/react-email/emails/test_email.tsx",
+        "packages/react-email/ui/Layout.tsx",
+        "backend/app/utils.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/index.md",
+      "sourcePaths": [
+        "backend/app/utils.py",
+        "backend/app/core/db.py",
+        "backend/app/main.py",
+        "frontend/src/main.tsx",
+        "packages/react-email/package.json"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/topology-and-mapping.md",
+      "sourcePaths": [
+        "backend/app/api/routes/login.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/routes/utils.py",
+        "backend/app/utils.py",
+        "backend/app/models.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/postgresql.md",
+      "sourcePaths": [
+        "backend/app/core/db.py",
+        "backend/app/models.py",
+        "backend/app/crud.py",
+        "backend/app/alembic/env.py",
+        "backend/app/core/config.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/smtp.md",
+      "sourcePaths": [
+        "backend/app/utils.py",
+        "backend/app/core/config.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/routes/login.py",
+        "backend/app/api/routes/utils.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/sentry.md",
+      "sourcePaths": [
+        "backend/app/main.py",
+        "backend/app/core/config.py",
+        "backend/pyproject.toml"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/index.md",
+      "sourcePaths": [
+        "backend/app/api/routes/login.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/routes/items.py",
+        "backend/app/models.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/auth-and-users.md",
+      "sourcePaths": [
+        "backend/app/api/routes/login.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/deps.py",
+        "backend/app/core/security.py",
+        "backend/app/crud.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/items.md",
+      "sourcePaths": [
+        "backend/app/api/routes/items.py",
+        "backend/app/models.py",
+        "backend/app/crud.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/password-recovery.md",
+      "sourcePaths": [
+        "backend/app/api/routes/login.py",
+        "backend/app/utils.py",
+        "backend/app/core/config.py",
+        "backend/app/models.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/domain-models/index.md",
+      "sourcePaths": [
+        "backend/app/models.py",
+        "backend/app/alembic/versions/fe56fa70289e_add_created_at_to_user_and_item.py",
+        "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/domain-models/user.md",
+      "sourcePaths": [
+        "backend/app/models.py",
+        "backend/app/crud.py",
+        "backend/app/api/routes/users.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/domain-models/item.md",
+      "sourcePaths": [
+        "backend/app/models.py",
+        "backend/app/crud.py",
+        "backend/app/api/routes/items.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/api-reference.md",
+      "sourcePaths": [
+        "backend/app/api/main.py",
+        "backend/app/api/routes/login.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/routes/items.py",
+        "backend/app/api/routes/utils.py",
+        "backend/app/api/routes/private.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/error-codes.md",
+      "sourcePaths": [
+        "backend/app/api/deps.py",
+        "backend/app/api/routes/login.py",
+        "backend/app/api/routes/users.py",
+        "backend/app/api/routes/items.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/configuration.md",
+      "sourcePaths": [
+        "backend/app/core/config.py",
+        ".env",
+        "compose.yml",
+        "frontend/.env",
+        "backend/Dockerfile"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/dev-and-test.md",
+      "sourcePaths": [
+        "backend/scripts/test.sh",
+        "backend/scripts/lint.sh",
+        "frontend/package.json",
+        ".pre-commit-config.yaml",
+        ".github/workflows/test-backend.yml",
+        ".github/workflows/playwright.yml"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/deployment-and-runtime.md",
+      "sourcePaths": [
+        "compose.yml",
+        "compose.deploy.yml",
+        "backend/Dockerfile",
+        "deployment.md",
+        ".github/workflows/deploy-docker-compose.yml"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/runbook-and-observability.md",
+      "sourcePaths": [
+        "backend/app/api/routes/utils.py",
+        "backend/app/main.py",
+        "backend/app/utils.py",
+        "compose.yml",
+        "backend/app/core/config.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/pitfalls-and-adr.md",
+      "sourcePaths": [
+        "backend/app/api/deps.py",
+        "backend/app/core/db.py",
+        "backend/app/main.py",
+        "backend/app/core/config.py",
+        "backend/app/utils.py",
+        "frontend/src/hooks/useAuth.ts"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/boundary.md",
+      "sourcePaths": [
+        ".gitignore",
+        ".dockerignore",
+        ".fastapicloudignore",
+        "hooks/post_gen_project.py",
+        ".agents/skills/library-skills/SKILL.md",
+        "img/dashboard.png"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "unresolvedRefs": 0,
+    "truncatedPages": 0,
+    "duplicatePairs": 0,
+    "checkedAt": "2026-11-19T12:07:00Z",
+    "gates": {
+      "G1_header_human_and_meta": "PASS",
+      "G2_coverage_and_contracts": "PASS",
+      "G3_closure_and_anchoring": "PASS",
+      "G4_depth_dedup_and_lang": "PASS",
+      "G5_mermaid_safety": "PASS"
+    }
+  }
+}
