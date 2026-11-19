@@ -4,7 +4,7 @@ scope: inbound-api
 status: draft
 origin: generated
 source_paths: [backend/app/api/main.py, backend/app/api/routes/login.py, backend/app/api/routes/users.py, backend/app/api/routes/items.py, backend/app/api/routes/utils.py, backend/app/api/routes/private.py]
-symbols: [api_router, login_access_token, read_users, read_items, health_check]
+symbols: [api_router, login_access_token, read_users, read_items, health_check, test_endpoint]
 upstream: [INDEX.md]
 downstream: [contracts/error-codes.md, integrations/topology-and-mapping.md, business/index.md]
 ---
@@ -22,7 +22,7 @@ downstream: [contracts/error-codes.md, integrations/topology-and-mapping.md, bus
 | 错误包络 | `{"detail": string}` | `backend/app/api/deps.py:37-40` |
 | 日期 | ISO 8601 UTC | `backend/app/models.py:8-10` |
 
-## 2. 全量路由总表（23 个）
+## 2. 全量路由总表（24 个）
 
 | 分组 | 方法 | 路径 | 鉴权 | Handler |
 |---|---|---|---|---|
@@ -48,6 +48,7 @@ downstream: [contracts/error-codes.md, integrations/topology-and-mapping.md, bus
 | items | DELETE | `/api/v1/items/{id}` | 当前用户 | `delete_item` (`:99`) |
 | utils | POST | `/api/v1/utils/test-email/` | 超级用户 | `test_email` (`backend/app/api/routes/utils.py:11`) |
 | utils | GET | `/api/v1/utils/health-check/` | 公开 | `health_check` (`:29`) |
+| utils | GET | `/api/v1/utils/test/` | 公开 | `test_endpoint` (`:33`) |
 | private | POST | `/api/v1/private/users/` | 仅 development | `create_user` (`backend/app/api/routes/private.py:23`) |
 
 ## 3. 分组入参与出参
@@ -57,7 +58,7 @@ downstream: [contracts/error-codes.md, integrations/topology-and-mapping.md, bus
 | login | `OAuth2PasswordRequestForm` 的 `username/password` | `Token(access_token, token_type)` | `username` 实际是邮箱 |
 | users | `UserCreate/UserUpdate/UserUpdateMe/UpdatePassword` | `UserPublic/UsersPublic/Message` | 密码只进不出 |
 | items | `ItemCreate/ItemUpdate` 与分页 `skip/limit` | `ItemPublic/ItemsPublic/Message` | `owner_id` 服务端注入 |
-| utils | `email_to` 查询参数 | `Message` 或 bool | 测试邮件只允许超级用户 |
+| utils | 无 | `Message` 或 bool | 测试邮件只允许超级用户；`/utils/test/` 固定返回 `{"message": "hello world"}` |
 | private | `PrivateUserCreate(email,password,full_name,is_verified)` | `UserPublic` | 不做唯一性检查 |
 
 ## 4. 错误分支
