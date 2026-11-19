@@ -31,6 +31,60 @@ Run backend commands from `./backend/` with `uv run`. Make sure your editor uses
 
 Modify or add SQLModel models for data and SQL tables in `./backend/app/models.py`, API endpoints in `./backend/app/api/`, CRUD (Create, Read, Update, Delete) utils in `./backend/app/crud.py`.
 
+## Architecture
+
+The backend is a single FastAPI application. The browser and Playwright call `/api/v1`; the same process serves the built frontend from `backend/app/frontend`.
+
+### Request path
+
+```text
+Browser / Playwright
+  -> /api/v1/*                         backend/app/main.py:35
+  -> api_router                        backend/app/api/main.py:7-10
+  -> dependencies                      backend/app/api/deps.py:21-57
+  -> route handler                     backend/app/api/routes/*.py
+  -> crud.py
+  -> SQLModel Session                  backend/app/core/db.py:7
+  -> PostgreSQL
+
+Side paths:
+  route handler -> utils.send_email -> SMTP
+  main.py       -> Sentry (only outside development, when SENTRY_DSN is set)
+```
+
+### Module responsibilities
+
+| Module | Responsibility | Entry point |
+|---|---|---|
+| `app/main.py` | Create FastAPI, CORS, mount the API router and the built frontend | `backend/app/main.py:21-36` |
+| `app/api/main.py` | Register login, users, items and utils routers | `backend/app/api/main.py:6-14` |
+| `app/api/deps.py` | Decode the bearer token, load the current user, enforce superuser access | `backend/app/api/deps.py:30-57` |
+| `app/api/routes/` | HTTP input, authorization checks and error responses | `backend/app/api/routes/*.py` |
+| `app/crud.py` | User and item persistence, password hashing, authentication | `backend/app/crud.py:10-68` |
+| `app/core/db.py` | SQLModel engine and initial superuser creation | `backend/app/core/db.py:7-33` |
+| `app/utils.py` | Render email templates and send mail over SMTP | `backend/app/utils.py:25-57` |
+
+### Upstream, downstream and failure impact
+
+| Dependency | Contract / entry point | Impact when unavailable |
+|---|---|---|
+| Browser and Playwright | HTTP JSON under `/api/v1` | UI cannot load or mutate data; 401/403 redirects to `/login` |
+| PostgreSQL | `DATABASE_URL`, SQLModel Session (`backend/app/core/db.py:7`) | Login, user and item requests fail with 500; the health endpoint only proves the process responds |
+| SMTP | `SMTP_HOST`, `SMTP_PORT`, `SMTP_TLS`, `SMTP_USER`, `SMTP_PASSWORD`; `backend/app/utils.py:34-57` | Account creation or password recovery returns 500 after the database commit; there is no automatic retry |
+| Sentry | `SENTRY_DSN`; `backend/app/main.py:18-19` | No business impact; only error observability is lost |
+| Built frontend | `backend/app/frontend`, served by `app.frontend("/")` | `/` returns 404 while the API remains available |
+
+### Change impact
+
+- Authentication: `backend/app/api/deps.py`, `backend/app/api/routes/login.py`, `backend/app/api/routes/users.py`, `backend/app/core/security.py`.
+- Items: `backend/app/api/routes/items.py`, `backend/app/models.py`, `backend/app/crud.py`.
+- Email: `backend/app/utils.py`, `packages/react-email/`, `backend/app/email-templates/`.
+- Runtime configuration: `backend/app/core/config.py`, `compose.yml`, `.env`.
+
+### Known blocker
+
+`backend/app/api/deps.py:36` currently uses `except InvalidTokenError, ValidationError:`, which is not valid Python 3 syntax. The application cannot be imported until this becomes `except (InvalidTokenError, ValidationError):`. This defect is tracked separately from the architecture description above.
+
 ## VS Code
 
 There are already configurations in place to run the backend through the VS Code debugger, so that you can use breakpoints, pause and explore variables, etc.
