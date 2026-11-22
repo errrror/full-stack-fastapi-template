@@ -34,10 +34,10 @@
     ".wally/review.md": "c837ffb0bbf8580aa3c7786d35dcc73599a8324768e643e670c45c9adffd53ed",
     ".wally/local/.gitignore": "cdbcae15105d6b781e620813c79c7e868740d4e9cc53ce6f5fcbbc12387adf4b",
     ".agents/skills/clarify/SKILL.md": "9baa2842a0a8b159a53e6501d0f3a8fafab8b07b0ac962bd0bb721576e0109a1",
-    ".agents/skills/wally-open-cli/SKILL.md": "17b74cbe88f1b9d786160800f2d7b438900aaff429a7e2abc94c57240bcafa46",
+    ".agents/skills/wally-open-cli/SKILL.md": "4f4631005fa13ac5a03324eca9cab8e0ca4caf8cea1f29755a962eb972440477",
     "AGENTS.md": "ff5ef3b1c85538a51a00978f56c8af10e9decbe462c35a09688bd3d01e8ecbf8",
     ".codebuddy/skills/clarify/SKILL.md": "9baa2842a0a8b159a53e6501d0f3a8fafab8b07b0ac962bd0bb721576e0109a1",
-    ".codebuddy/skills/wally-open-cli/SKILL.md": "17b74cbe88f1b9d786160800f2d7b438900aaff429a7e2abc94c57240bcafa46"
+    ".codebuddy/skills/wally-open-cli/SKILL.md": "4f4631005fa13ac5a03324eca9cab8e0ca4caf8cea1f29755a962eb972440477"
   },
   "translation_sources": {},
   "custom_commit": false
